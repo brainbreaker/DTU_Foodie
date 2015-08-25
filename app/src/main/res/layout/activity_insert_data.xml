@@ -1,0 +1,129 @@
+<ScrollView
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.brainbreaker.dtufoodie.InsertData">
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/sno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="S.No."
+        app:met_baseColor="@color/appeti_dark_green"
+        app:met_primaryColor="#76FF03"
+        app:met_floatingLabel="highlight"
+        app:met_floatingLabelText="S.No."
+        app:met_floatingLabelTextSize="15sp"
+        android:visibility="visible"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:textColorHint="@color/appeti_dark_green"
+        android:inputType="number" />
+
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/hostel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Hostel Name"
+        app:met_baseColor="@color/appeti_dark_green"
+        app:met_primaryColor="#76FF03"
+        app:met_floatingLabel="highlight"
+        app:met_floatingLabelText="Hostel Name"
+        app:met_floatingLabelTextSize="15sp"
+        android:visibility="visible"
+        android:layout_marginTop="40dp"
+        android:textSize="20sp"
+        android:textColorHint="@color/appeti_dark_green"
+        android:inputType="textPersonName" />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/weekday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Day"
+        app:met_baseColor="@color/appeti_dark_green"
+        app:met_primaryColor="#76FF03"
+        app:met_floatingLabel="highlight"
+        app:met_floatingLabelText="Day"
+        app:met_floatingLabelTextSize="15sp"
+        android:visibility="visible"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:textColorHint="@color/appeti_dark_green"
+        android:inputType="textPersonName" />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Category"
+        app:met_baseColor="@color/appeti_dark_green"
+        app:met_primaryColor="#76FF03"
+        app:met_floatingLabel="highlight"
+        app:met_floatingLabelText="Category"
+        app:met_floatingLabelTextSize="15sp"
+        android:visibility="visible"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:textColorHint="@color/appeti_dark_green"
+        android:inputType="text" />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/food"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Food Items"
+        app:met_baseColor="@color/appeti_dark_green"
+        app:met_primaryColor="#76FF03"
+        app:met_floatingLabel="highlight"
+        app:met_floatingLabelText="Food Items"
+        app:met_floatingLabelTextSize="15sp"
+        android:visibility="visible"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:textColorHint="@color/appeti_dark_green"
+        android:inputType="text" />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/rate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Rate"
+        app:met_baseColor="@color/appeti_dark_green"
+        app:met_primaryColor="#76FF03"
+        app:met_floatingLabel="highlight"
+        app:met_floatingLabelText="Rate"
+        app:met_floatingLabelTextSize="15sp"
+        android:visibility="visible"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:textColorHint="@color/appeti_dark_green"
+        android:inputType="textPostalAddress" />
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Insert"
+        android:id="@+id/insert"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:textColor="@color/appeti_dark_green"
+        android:background="#311B92"
+        android:layout_marginTop="20dp" />
+
+
+</LinearLayout>
+</ScrollView>

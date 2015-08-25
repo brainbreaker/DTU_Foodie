@@ -1,0 +1,100 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:discrollve="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:card="http://schemas.android.com/apk/res-auto"
+    android:background="@color/appeti_lightyellow_green"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.brainbreaker.dtufoodie.Details">
+
+
+    <com.flavienlaurent.discrollview.lib.DiscrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:discrollve="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <com.flavienlaurent.discrollview.lib.DiscrollViewContent
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:text="WeekDay22"
+            android:id="@+id/weekday22"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:text="WeekDay23"
+            android:id="@+id/weekday2"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:text="WeekDay"
+            android:id="@+id/weekday322"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/taj"
+            android:textColor="@color/appeti_dull_yellow"
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:fontFamily="serif"
+            android:text="TAJ MAHAL" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_translation="fromTop|fromLeft"
+            android:src="@drawable/ghewar"
+            android:background="@color/appeti_dark_green"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="TOPLESS"
+            android:textSize="18sp"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_translation="fromBottom"
+            android:background="@color/appeti_bright_yellow"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:src="@drawable/jalmahal"
+            discrollve:discrollve_scaleX="true"
+            discrollve:discrollve_scaleY="true"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_translation="fromLeft"
+            android:background="@color/appeti_dull_yellow"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="jjjdnjs"
+            android:textSize="18sp"
+            discrollve:discrollve_alpha="true"
+            discrollve:discrollve_translation="fromRight"
+            android:background="@drawable/taj"/>
+
+    </com.flavienlaurent.discrollview.lib.DiscrollViewContent>
+    </com.flavienlaurent.discrollview.lib.DiscrollView>
+</LinearLayout>

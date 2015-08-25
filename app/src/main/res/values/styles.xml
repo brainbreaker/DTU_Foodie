@@ -1,0 +1,84 @@
+<resources>
+
+    <!-- Base application theme. -->
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+        <item name="windowActionBar">false</item>
+
+        <!--Support Library compatibility-->
+        <item name="actionBarStyle">@style/MyActionBar</item>
+    </style>
+
+    <style name="AppTheme1" parent="AppBaseTheme">
+    </style>
+
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/appeti_green</item>
+        <item name="android:textColorPrimary">@color/appeti_dark_green</item>
+        <item name="colorPrimaryDark">@color/appeti_dark_green</item>
+        <item name="colorAccent">@color/appeti_sky_blue</item>
+        <item name="actionBarStyle">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+    </style>
+    <!-- ActionBar styles -->
+    <style name="MyActionBar"
+        parent="@style/Widget.AppCompat.Light.ActionBar">
+
+        <item name="android:background">@color/fbutton_color_carrot</item>
+
+        <!--Support Library compatibility-->
+        <item name="background">@color/fbutton_color_carrot</item>
+    </style>
+
+    <style name="NoActionBar" parent="Theme.AppCompat.Light">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="Birth.card.content_outer_layout" parent="@style/card.content_outer_layout">
+        <!--Style for Content View-->
+        <item name="android:minHeight">60dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginTop">@dimen/card_content_outer_view_margin_top</item>
+        <item name="android:layout_marginBottom">@dimen/card_content_outer_view_margin_bottom</item>
+        <item name="android:layout_marginLeft">@dimen/card_content_outer_view_margin_left</item>
+        <item name="android:layout_marginRight">@dimen/card_content_outer_view_margin_right</item>
+    </style>
+
+    <style name="Now"></style>
+
+    <style name="Now.card_expand_inner_layout">
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="Now.card_expand_inner_layout.light_gray">
+        <item name="android:background">#515254</item>
+        <item name="android:textColor">#B3B2B2</item>
+    </style>
+
+    <style name="Now.card_expand_inner_layout.light_gray.bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Now.card_expand_inner_layout.dark">
+        <item name="android:background">#515254</item>
+        <item name="android:textColor">#FFF</item>
+    </style>
+
+    <style name="Now.card_expand_inner_layout.dark.bold" parent="@style/Now.card_expand_inner_layout.dark">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="carddemo_default_container_padding">
+        <item name="android:clipToPadding">false</item>
+        <item name="android:scrollbarStyle">outsideOverlay</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+    </style>
+
+
+</resources>

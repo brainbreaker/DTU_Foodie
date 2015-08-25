@@ -1,0 +1,194 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fbutton="http://schemas.android.com/apk/res-auto"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.brainbreaker.dtufoodie.Choose"
+    android:background="@drawable/rannbackground">
+
+    <!--<com.flavienlaurent.discrollview.lib.DiscrollView-->
+        <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+        <!--xmlns:discrollve="http://schemas.android.com/apk/res-auto"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!-->-->
+        <!-- -->
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@drawable/taj"-->
+            <!--android:textColor="@color/appeti_dull_yellow"-->
+            <!--android:padding="10dp"-->
+            <!--android:textSize="20sp"-->
+            <!--android:gravity="center"-->
+            <!--android:fontFamily="serif"-->
+            <!--android:text="TAJ MAHAL" />-->
+
+        <!--<ImageView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="200dp"-->
+            <!--discrollve:discrollve_alpha="true"-->
+            <!--discrollve:discrollve_translation="fromTop|fromLeft"-->
+            <!--android:src="@drawable/ghewar"-->
+            <!--android:background="@color/appeti_dark_green"/>-->
+
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:fontFamily="serif"-->
+            <!--android:gravity="center"-->
+            <!--android:text="TOPLESS"-->
+            <!--android:textSize="18sp"-->
+            <!--discrollve:discrollve_alpha="true"-->
+            <!--discrollve:discrollve_translation="fromBottom"-->
+            <!--android:background="@color/appeti_bright_yellow"/>-->
+
+        <!--<ImageView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="200dp"-->
+            <!--android:src="@drawable/jalmahal"-->
+            <!--discrollve:discrollve_scaleX="true"-->
+            <!--discrollve:discrollve_scaleY="true"-->
+            <!--discrollve:discrollve_alpha="true"-->
+            <!--discrollve:discrollve_translation="fromLeft"-->
+            <!--android:background="@color/appeti_dull_yellow"/>-->
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:fontFamily="serif"-->
+            <!--android:gravity="center"-->
+            <!--android:text="jjjdnjs"-->
+            <!--android:textSize="18sp"-->
+            <!--discrollve:discrollve_alpha="true"-->
+            <!--discrollve:discrollve_translation="fromRight"-->
+            <!--android:background="@drawable/taj"/>-->
+
+        <!--<com.flavienlaurent.discrollview.lib.DiscrollViewContent-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent">-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                xmlns:discrollve="http://schemas.android.com/apk/res-auto">
+
+                <fr.ganfra.materialspinner.MaterialSpinner
+                    android:id="@+id/placesspinner"
+                    app:ms_multiline="false"
+                    app:ms_floatingLabelText="DAY"
+                    app:ms_baseColor="@color/fbutton_color_wet_asphalt"
+                    app:ms_highlightColor="@color/appeti_dull_yellow"
+                    app:ms_thickness='2dp'
+                    app:ms_arrowColor="@color/appeti_dull_yellow"
+                    app:ms_arrowSize="16dp"
+                    app:ms_alignLabels="false"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/places_array"
+                    />
+
+                <fr.ganfra.materialspinner.MaterialSpinner
+                    android:id="@+id/weekspinner"
+                    app:ms_multiline="false"
+                    app:ms_floatingLabelText="DAY"
+                    app:ms_baseColor="@color/fbutton_color_wet_asphalt"
+                    app:ms_highlightColor="@color/appeti_dull_yellow"
+                    app:ms_thickness='2dp'
+                    app:ms_arrowColor="@color/appeti_dull_yellow"
+                    app:ms_arrowSize="16dp"
+                    app:ms_alignLabels="false"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/week_array"
+                    />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:src="@drawable/taj"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/appeti_dark_green"
+                    android:textSize="40sp"
+                    android:gravity="center"
+                    android:fontFamily="serif"
+                    android:text="--Select Meal--" />
+
+                <info.hoang8f.widget.FButton
+                    android:id="@+id/BREAKFAST"
+                    fbutton:buttonColor="#0277BD"
+                    fbutton:shadowColor="#01579B"
+                    fbutton:shadowEnabled="true"
+                    fbutton:shadowHeight="5dp"
+                    fbutton:cornerRadius="10dp"
+                    android:text="BREAKFAST"
+                    android:textColor="@color/appeti_white"
+                    android:textSize="40dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="serif"
+                    android:background="@drawable/dosa"/>
+
+                <info.hoang8f.widget.FButton
+                android:id="@+id/LUNCH"
+                fbutton:buttonColor="#0277BD"
+                fbutton:shadowColor="#01579B"
+                fbutton:shadowEnabled="true"
+                fbutton:shadowHeight="5dp"
+                fbutton:cornerRadius="10dp"
+                android:text="LUNCH"
+                android:textColor="@color/appeti_white"
+                android:textSize="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="serif"/>
+
+            <info.hoang8f.widget.FButton
+                android:id="@+id/TEA_TIME"
+                fbutton:buttonColor="#0277BD"
+                fbutton:shadowColor="#01579B"
+                fbutton:shadowEnabled="true"
+                fbutton:shadowHeight="5dp"
+                fbutton:cornerRadius="10dp"
+                android:text="TEA TIME"
+                android:textColor="@color/appeti_white"
+                android:textSize="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="serif"/>
+
+            <info.hoang8f.widget.FButton
+                android:id="@+id/DINNER"
+                fbutton:buttonColor="#0277BD"
+                fbutton:shadowColor="#01579B"
+                fbutton:shadowEnabled="true"
+                fbutton:shadowHeight="5dp"
+                fbutton:cornerRadius="10dp"
+                android:text="DINNER"
+                android:textColor="@color/appeti_white"
+                android:textSize="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="serif"/>
+            </LinearLayout>
+    </ScrollView>
+        <!--</com.flavienlaurent.discrollview.lib.DiscrollViewContent>-->
+    <!--</com.flavienlaurent.discrollview.lib.DiscrollView>-->
+
+</RelativeLayout>
