@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.brainbreaker.dtufoodie.database.FoodieDatabase;
 
 public class InsertData extends AppCompatActivity {
     com.rengwuxian.materialedittext.MaterialEditText sno;
@@ -20,7 +19,6 @@ public class InsertData extends AppCompatActivity {
     com.rengwuxian.materialedittext.MaterialEditText weekday;
     com.rengwuxian.materialedittext.MaterialEditText rate;
 
-
     Button insert;
 
     String Shostel;
@@ -29,7 +27,7 @@ public class InsertData extends AppCompatActivity {
     String Sweekday;
     String Srate;
 
-    String Isno;
+    Integer Isno;
 
     Context context= this;
 
@@ -48,20 +46,15 @@ public class InsertData extends AppCompatActivity {
 
         insert = (Button) findViewById(R.id.insert);
 
-        Isno = sno.getText().toString();
-        Shostel = hostel.getText().toString();
-        Scategory = category.getText().toString();
-        Sfood = food.getText().toString();
-        Sweekday = weekday.getText().toString();
-        Srate = rate.getText().toString();
-
         insert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FoodieDatabase fdb = new FoodieDatabase(context);
-                fdb.insertvalues(fdb,Isno,Shostel,Sweekday,Scategory,Sfood,Srate);
-                Toast.makeText(InsertData.this,"Value No." + Isno + "inserted successfully.",Toast.LENGTH_LONG).show();
-
+                Isno = Integer.parseInt(sno.getText().toString());
+                Shostel = hostel.getText().toString();
+                Scategory = category.getText().toString();
+                Sfood = food.getText().toString();
+                Sweekday = weekday.getText().toString();
+                Srate = rate.getText().toString();
                 Intent intent = new Intent(InsertData.this, Home.class);
                 InsertData.this.startActivity(intent);
                 finish();

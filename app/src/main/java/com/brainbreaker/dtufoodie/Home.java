@@ -3,6 +3,8 @@ package com.brainbreaker.dtufoodie;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+//import android.database.SQLException;
+import java.sql.SQLException;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.AsyncTask;
 import android.provider.Telephony;
@@ -16,16 +18,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.brainbreaker.dtufoodie.database.FoodieDatabase;
 import com.heinrichreimersoftware.materialdrawer.DrawerActivity;
 import com.heinrichreimersoftware.materialdrawer.DrawerView;
 import com.heinrichreimersoftware.materialdrawer.structure.DrawerHeaderItem;
 import com.heinrichreimersoftware.materialdrawer.structure.DrawerItem;
 import com.heinrichreimersoftware.materialdrawer.structure.DrawerProfile;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -43,14 +46,19 @@ public class Home extends DrawerActivity {
     private CardArrayRecyclerViewAdapter mCardArrayAdapter;
     private CardRecyclerView mRecyclerView;
     final int TOTAL_CARDS = 4;
+    String category;
+    String weekday;
+    Integer fimage;
     String food;
     String place[] = {"VVS Hostel Mess","HJB Hostel Mess","CVR Hostel Mess","Aryabhatt Hostel Mess"};
-    String price[] =  {"Rs. 25 Per Plate","Rs. 25 Per Plate","Rs. 25 Per Plate","Rs. 25 Per Plate"};
-    String title;
-    TextView weekday;
+    String pricebreakfast[]= {"Rs. 25 Per Plate","Rs. 25 Per Plate","Rs. 25 Per Plate","Rs. 25 Per Plate"};
+    String pricelunch[]= {"Rs. 50 Per Plate","Rs. 50 Per Plate","Rs. 50 Per Plate","Rs. 50 Per Plate"};
+    String pricesnacks[]= {"Rs. 15 Per Plate","Rs. 15 Per Plate","Rs. 15 Per Plate","Rs. 15 Per Plate"};
+    String pricedinner[]= {"Rs. 50 Per Plate","Rs. 50 Per Plate","Rs. 50 Per Plate","Rs. 50 Per Plate"};
+    String price[];
+    String dayofweek;
+    Integer time;
     Button insert;
-    int pimage[]={R.drawable.marinedrive,R.drawable.taj,R.drawable.tajmahal,R.drawable.bikaneripapad,R.drawable.ghewar,R.drawable.jalmahal};
-
     private Toolbar toolbar;
     private DrawerView drawer;
     private ActionBarDrawerToggle drawerToggle;
@@ -157,33 +165,14 @@ public class Home extends DrawerActivity {
                         .setDescription(getString(R.string.welcome))
         );
 
-
-
-        weekday= (TextView) findViewById(R.id.weekday);
-        TextView weekday2 = (TextView) findViewById(R.id.weekday2);
-
-        SimpleDateFormat sdf = new SimpleDateFormat("EEEE");
-        Date date = new Date();
-        String dayofweek = sdf.format(date);
-        Calendar c = Calendar.getInstance();
-        System.out.println("Current time => "+c.getTime());
-        SimpleDateFormat df = new SimpleDateFormat("HH:mm:ss");
-        String formattedDate = df.format(c.getTime());
-
-// Database Operations
-        FoodieDatabase fdb = new FoodieDatabase(this);
-        Cursor CR = fdb.retrievevalues(fdb);
-        CR.moveToFirst();
-        do {
-            String hostelname = CR.getString(1);
-            String weekday = CR.getString(2);
-            String category = CR.getString(3);
-            String food = CR.getString(4);
-            String rate = CR.getString(5);
-            Toast.makeText(Home.this, hostelname, Toast.LENGTH_LONG).show();
-            Toast.makeText(Home.this, weekday, Toast.LENGTH_LONG).show();
-        }
-        while(CR.moveToNext());
+//        String week[] = {"Monday","Monday","Monday","Monday","Monday","Monday","Monday"};
+//        for (int i = 0; i<5; i++) {
+//            switch (week[i]) {
+//                case "Monday":
+//                    Toast.makeText(Home.this, "SWITCH OF MONDAY", Toast.LENGTH_LONG).show();
+//                    break;
+//            }
+//        }
         ArrayList<Card> cards = new ArrayList<>();
         mCardArrayAdapter = new CardArrayRecyclerViewAdapter(this, cards);
         CardRecyclerView mRecyclerView = (CardRecyclerView) findViewById(R.id.card_recyclerview);
@@ -197,16 +186,151 @@ public class Home extends DrawerActivity {
         //Load cards
         new LoaderAsyncTask().execute();
     }
+    public String getWeekday()
+    {
+        SimpleDateFormat sdf = new SimpleDateFormat("EEEE");
+        Date date = new Date();
+        dayofweek = sdf.format(date);
+        return dayofweek;
+    }
+
+    public Integer getHourTime(){
+
+        Calendar c = Calendar.getInstance();
+        System.out.println("Current time => "+c.getTime());
+        SimpleDateFormat df = new SimpleDateFormat("HH");
+        time = Integer.parseInt(df.format(c.getTime()));
+        return time;
+    }
+
+    public String Category(){
+
+        Integer hour = getHourTime();
+        if(0<=hour && hour<=11){
+            category = "Breakfast";
+        }
+        else if(11<=hour && hour<=14){
+            category = "Lunch";
+        }
+        else if(14<=hour && hour<=18){
+            category = "Snacks";
+        }
+        else if(18<=hour && hour<=24){
+            category = "Dinner";
+        }
+
+        return category;
+    }
+
+    public String[] price(){
+        String category = Category();
+
+        if (category.equals("Breakfast"))
+        {
+           price = pricebreakfast;
+        }
+        else if (category.equals("Snacks"))
+        {
+            price = pricesnacks;
+        }
+        else if (category.equals("Lunch"))
+        {
+            price = pricelunch;
+        }
+        else if (category.equals("Dinner"))
+        {
+            price = pricedinner;
+        }
+        return price;
+    }
 
     private ArrayList<Card> initCard() {
-
-
-
-
         ArrayList<Card> cards = new ArrayList<Card>();
         for (int i = 0; i < TOTAL_CARDS; i++) {
             final ArrayList<BaseSupplementalAction> actions = new ArrayList<BaseSupplementalAction>();
+            weekday= getWeekday();
+            category = Category();
+            price = price();
 
+            if (weekday.equals("Monday")){
+                if (category.equals("Breakfast")){
+
+                    switch (i)
+                    {
+                        case 0: food = "Masala Dosa";
+                                 fimage = R.drawable.ghewar;
+                            break;
+                        case 1: food = "Upma, Sambhar Vada";
+                            fimage = R.drawable.marinedrive;
+                            break;
+                        case 2: food = "XXX";
+                            fimage = R.drawable.taj;
+                            break;
+                        case 3: food = "YYY";
+                            fimage = R.drawable.tajmahal;
+                            break;
+                    }
+
+                }
+                if (category.equals("Snacks")){
+
+                    switch (i)
+                    {
+                        case 0: food = "Masala Dosa";
+                            fimage = R.drawable.ghewar;
+                            break;
+                        case 1: food = "Upma, Sambhar Vada";
+                            fimage = R.drawable.marinedrive;
+                            break;
+                        case 2: food = "XXX";
+                            fimage = R.drawable.taj;
+                            break;
+                        case 3: food = "YYY";
+                            fimage = R.drawable.tajmahal;
+                            break;
+                    }
+
+                }
+                if (category.equals("Lunch")){
+
+                    switch (i)
+                    {
+                        case 0: food = "Masala Dosa";
+                            fimage = R.drawable.ghewar;
+                            break;
+                        case 1: food = "Upma, Sambhar Vada";
+                            fimage = R.drawable.marinedrive;
+                            break;
+                        case 2: food = "XXX";
+                            fimage = R.drawable.taj;
+                            break;
+                        case 3: food = "YYY";
+                            fimage = R.drawable.tajmahal;
+                            break;
+                    }
+
+                }
+                if (category.equals("Dinner")){
+
+                    switch (i)
+                    {
+                        case 0: food = "Masala Dosa";
+                            fimage = R.drawable.ghewar;
+                            break;
+                        case 1: food = "Upma, Sambhar Vada";
+                            fimage = R.drawable.marinedrive;
+                            break;
+                        case 2: food = "XXX";
+                            fimage = R.drawable.taj;
+                            break;
+                        case 3: food = "YYY";
+                            fimage = R.drawable.tajmahal;
+                            break;
+                    }
+
+                }
+
+            }
 
             // Set supplemental actions
             TextSupplementalAction t1 = new TextSupplementalAction(this, R.id.action1);
@@ -232,24 +356,15 @@ public class Home extends DrawerActivity {
             });
             actions.add(t1);
             actions.add(t2);
-            switch (i){
-                case 0: food = "Aalo Parantha";
-                    break;
-                case 1: food = "Chhole Bhature";
-                    break;
-                case 2: food = "Pav Bhaji";
-                    break;
-                case 3: food = "Masala Dosa";
-                    break;
 
-            }
+
 //            Create a Card, set the title over the image and set the thumbnail
               MaterialLargeImageCard card =
                     MaterialLargeImageCard.with(this)
                             .setTextOverImage(food)
                             .setTitle(place[i])
                             .setSubTitle(price[i])
-                            .useDrawableId(pimage[i])
+                            .useDrawableId(fimage)
                             .setupSupplementalActions(R.layout.products_supplimental_actions_layout, actions)
                             .build();
 

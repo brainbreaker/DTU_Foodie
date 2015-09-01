@@ -39,6 +39,8 @@ dependencies {
     compile 'com.rengwuxian.materialedittext:library:2.1.4'
     // Material Drawer
     compile 'com.heinrichreimersoftware.materialdrawer:library:2.1.2'
+    // SQLite Asset Helper
+//    compile 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
 
 
 }
