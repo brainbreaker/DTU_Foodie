@@ -21,6 +21,7 @@ public class Choose extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose);
+
         placespinner = (MaterialSpinner) findViewById(R.id.placesspinner);
         places = getResources().getStringArray(R.array.places_array);
         ArrayAdapter<String> placeadapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, places);
@@ -41,6 +42,8 @@ public class Choose extends AppCompatActivity {
                 Choose.this.startActivity(intent);
             }
         });
+
+        
 
     }
 

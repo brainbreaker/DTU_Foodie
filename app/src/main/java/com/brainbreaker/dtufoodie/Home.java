@@ -212,7 +212,7 @@ public class Home extends DrawerActivity {
         else if(11<=hour && hour<=14){
             category = "Lunch";
         }
-        else if(14<=hour && hour<=18){
+        else if(14<hour && hour<18){
             category = "Snacks";
         }
         else if(18<=hour && hour<=24){
@@ -251,87 +251,620 @@ public class Home extends DrawerActivity {
             weekday= getWeekday();
             category = Category();
             price = price();
+            if(weekday.equals("Monday")) {
 
-            if (weekday.equals("Monday")){
-                if (category.equals("Breakfast")){
+                if (category.equals("Breakfast")) {
 
-                    switch (i)
-                    {
-                        case 0: food = "Masala Dosa";
-                                 fimage = R.drawable.ghewar;
-                            break;
-                        case 1: food = "Upma, Sambhar Vada";
-                            fimage = R.drawable.marinedrive;
-                            break;
-                        case 2: food = "XXX";
-                            fimage = R.drawable.taj;
-                            break;
-                        case 3: food = "YYY";
-                            fimage = R.drawable.tajmahal;
-                            break;
-                    }
-
+                        switch (i) {
+                            case 0:
+                                food = "Masala Dosa";
+                                fimage = R.drawable.ghewar;
+                                break;
+                            case 1:
+                                food = "Upma, Sambhar Vada";
+                                fimage = R.drawable.marinedrive;
+                                break;
+                            case 2:
+                                food = "XXX";
+                                fimage = R.drawable.taj;
+                                break;
+                            case 3:
+                                food = "Upma, Sambhar Vada";
+                                fimage = R.drawable.tajmahal;
+                                break;
+                        }
                 }
-                if (category.equals("Snacks")){
 
-                    switch (i)
-                    {
-                        case 0: food = "Masala Dosa";
+                if (category.equals("Lunch")) {
+
+                    switch (i) {
+                        case 0:
+                            food = "XXX";
                             fimage = R.drawable.ghewar;
                             break;
-                        case 1: food = "Upma, Sambhar Vada";
+                        case 1:
+                            food = "XXX";
                             fimage = R.drawable.marinedrive;
                             break;
-                        case 2: food = "XXX";
+                        case 2:
+                            food = "XXX";
                             fimage = R.drawable.taj;
                             break;
-                        case 3: food = "YYY";
+                        case 3:
+                            food = "YYY";
                             fimage = R.drawable.tajmahal;
                             break;
                     }
-
                 }
-                if (category.equals("Lunch")){
 
-                    switch (i)
-                    {
-                        case 0: food = "Masala Dosa";
+                if (category.equals("Snacks")) {
+
+                    switch (i) {
+                                case 0:
+                                    food = "Samosa";
+                                    fimage = R.drawable.ghewar;
+                                    break;
+                                case 1:
+                                    food = "Samosa";
+                                    fimage = R.drawable.marinedrive;
+                                    break;
+                                case 2:
+                                    food = "Samosa";
+                                    fimage = R.drawable.taj;
+                                    break;
+                                case 3:
+                                    food = "Samosa";
+                                    fimage = R.drawable.tajmahal;
+                                    break;
+                    }
+                }
+
+                if (category.equals("Dinner")) {
+                    switch (i) {
+                        case 0:
+                            food = "Kofta/Egg Curry, Sewai Kheer";
                             fimage = R.drawable.ghewar;
                             break;
-                        case 1: food = "Upma, Sambhar Vada";
+                        case 1:
+                            food = "Kofta, Sewai Kheer";
                             fimage = R.drawable.marinedrive;
                             break;
-                        case 2: food = "XXX";
+                        case 2:
+                            food = "XXX";
                             fimage = R.drawable.taj;
                             break;
-                        case 3: food = "YYY";
+                        case 3:
+                            food = "Kofta/Egg Curry, Sewai Kheer";
                             fimage = R.drawable.tajmahal;
                             break;
                     }
-
                 }
-                if (category.equals("Dinner")){
-
-                    switch (i)
-                    {
-                        case 0: food = "Masala Dosa";
-                            fimage = R.drawable.ghewar;
-                            break;
-                        case 1: food = "Upma, Sambhar Vada";
-                            fimage = R.drawable.marinedrive;
-                            break;
-                        case 2: food = "XXX";
-                            fimage = R.drawable.taj;
-                            break;
-                        case 3: food = "YYY";
-                            fimage = R.drawable.tajmahal;
-                            break;
-                    }
-
-                }
-
             }
 
+
+            else if (weekday.equals("Tuesday")) {
+                if (category.equals("Breakfast")) {
+
+                    switch (i) {
+                        case 0:
+                            food = "Aalo Parantha";
+                            fimage = R.drawable.ghewar;
+                            break;
+                        case 1:
+                            food = "Plain Parantha, Aalo sabzi";
+                            fimage = R.drawable.marinedrive;
+                            break;
+                        case 2:
+                            food = "XXX";
+                            fimage = R.drawable.taj;
+                            break;
+                        case 3:
+                            food = "Aalo Parantha";
+                            fimage = R.drawable.tajmahal;
+                            break;
+                    }
+                }
+
+                if (category.equals("Lunch")) {
+
+                    switch (i) {
+                        case 0:
+                            food = "XXX";
+                            fimage = R.drawable.ghewar;
+                            break;
+                        case 1:
+                            food = "xxx";
+                            fimage = R.drawable.marinedrive;
+                            break;
+                        case 2:
+                            food = "XXX";
+                            fimage = R.drawable.taj;
+                            break;
+                        case 3:
+                            food = "YYY";
+                            fimage = R.drawable.tajmahal;
+                            break;
+                    }
+                }
+
+                if (category.equals("Snacks")) {
+
+                    switch (i) {
+                        case 0:
+                            food = "Poha";
+                            fimage = R.drawable.ghewar;
+                            break;
+                        case 1:
+                            food = "Poha";
+                            fimage = R.drawable.marinedrive;
+                            break;
+                        case 2:
+                            food = "Poha";
+                            fimage = R.drawable.taj;
+                            break;
+                        case 3:
+                            food = "XXX";
+                            fimage = R.drawable.tajmahal;
+                            break;
+                    }
+                }
+                if (category.equals("Dinner")) {
+                    switch (i) {
+                        case 0:
+                            food = "Paalak Paneer, Custard, Chhole, Puri";
+                            fimage = R.drawable.ghewar;
+                            break;
+                        case 1:
+                            food = "Shahi Paneer, Custard, Chhole, Puri";
+                            fimage = R.drawable.marinedrive;
+                            break;
+                        case 2:
+                            food = "Shahi Paneer, Custard, Chhole, Puri";
+                            fimage = R.drawable.taj;
+                            break;
+                        case 3:
+                            food = "Shahi Paneer, Custard, Chhole, Puri";
+                            fimage = R.drawable.tajmahal;
+                            break;
+                    }
+                }
+            }
+
+
+            if (weekday.equals("Wednesday")) {
+                if (category.equals("Breakfast")) {
+
+                    switch (i) {
+                        case 0:
+                            food = "Chhole Bhature";
+                            fimage = R.drawable.ghewar;
+                            break;
+                        case 1:
+                            food = "XXX";
+                            fimage = R.drawable.marinedrive;
+                            break;
+                        case 2:
+                            food = "Plain Parantha, Aalo sabzi";
+                            fimage = R.drawable.taj;
+                            break;
+                        case 3:
+                            food = "Pav Bhaji/Chhole Kulche/Plain Parantha, Aalo Sabzi";
+                            fimage = R.drawable.tajmahal;
+                            break;
+                    }
+                }
+
+                if (category.equals("Lunch")) {
+
+                    switch (i) {
+                        case 0:
+                            food = "Chowmein";
+                            fimage = R.drawable.ghewar;
+                            break;
+                        case 1:
+                            food = "XXX";
+                            fimage = R.drawable.marinedrive;
+                            break;
+                        case 2:
+                            food = "Ghiya(Bottleguard), Boondi Rayta, Chapatis";
+                            fimage = R.drawable.taj;
+                            break;
+                        case 3:
+                            food = "xxx";
+                            fimage = R.drawable.tajmahal;
+                            break;
+                    }
+                }
+
+                if (category.equals("Snacks")) {
+
+                    switch (i) {
+                        case 0:
+                            food = "Pastry, Coffee";
+                            fimage = R.drawable.ghewar;
+                            break;
+                        case 1:
+                            food = "Bread Sandwich";
+                            fimage = R.drawable.marinedrive;
+                            break;
+                        case 2:
+                            food = "Pastry, Coffee";
+                            fimage = R.drawable.taj;
+                            break;
+                        case 3:
+                            food = "Pastry, Coffee";
+                            fimage = R.drawable.tajmahal;
+                            break;
+                    }
+                }
+
+                if (category.equals("Dinner")) {
+                    switch (i) {
+                        case 0:
+                            food = "Chicken,xxx";
+                            fimage = R.drawable.ghewar;
+                            break;
+                        case 1:
+                            food = "Matar Paneer, Halwa, XXX";
+                            fimage = R.drawable.marinedrive;
+                            break;
+                        case 2:
+                            food = "XXX";
+                            fimage = R.drawable.taj;
+                            break;
+                        case 3:
+                            food = "Matar Paneer/Chicken, Halwa";
+                            fimage = R.drawable.tajmahal;
+                            break;
+                    }
+                }
+            }
+            if (weekday.equals("Thursday")){
+                   if (category.equals("Breakfast")) {
+
+
+                       switch (i) {
+                           case 0:
+                               food = "Masala Dosa";
+                               fimage = R.drawable.ghewar;
+                               break;
+                           case 1:
+                               food = "Upma, Sambhar Vada";
+                               fimage = R.drawable.marinedrive;
+                               break;
+                           case 2:
+                               food = "XXX";
+                               fimage = R.drawable.taj;
+                               break;
+                           case 3:
+                               food = "Chhole Bhature";
+                               fimage = R.drawable.tajmahal;
+                               break;
+                       }
+                   }
+                if (category.equals("Lunch")) {
+
+                    switch (i) {
+                        case 0:
+                            food = "Masala Dosa";
+                            fimage = R.drawable.ghewar;
+                            break;
+                        case 1:
+                            food = "Upma, Sambhar Vada";
+                            fimage = R.drawable.marinedrive;
+                            break;
+                        case 2:
+                            food = "XXX";
+                            fimage = R.drawable.taj;
+                            break;
+                        case 3:
+                            food = "YYY";
+                            fimage = R.drawable.tajmahal;
+                            break;
+                    }
+                }
+                if (category.equals("Snacks")) {
+
+                    switch (i) {
+                        case 0:
+                            food = "Masala Dosa";
+                            fimage = R.drawable.ghewar;
+                            break;
+                        case 1:
+                            food = "Upma, Sambhar Vada";
+                            fimage = R.drawable.marinedrive;
+                            break;
+                        case 2:
+                            food = "XXX";
+                            fimage = R.drawable.taj;
+                            break;
+                        case 3:
+                            food = "YYY";
+                            fimage = R.drawable.tajmahal;
+                            break;
+                    }
+                }
+                if (category.equals("Dinner")) {
+                    switch (i) {
+                        case 0:
+                            food = "xxx";
+                            fimage = R.drawable.ghewar;
+                            break;
+                        case 1:
+                            food = "xxx";
+                            fimage = R.drawable.marinedrive;
+                            break;
+                        case 2:
+                            food = "XXX";
+                            fimage = R.drawable.taj;
+                            break;
+                        case 3:
+                            food = "YYY";
+                            fimage = R.drawable.tajmahal;
+                            break;
+                    }
+                }
+            }
+            if (weekday.equals("Friday"))
+            {
+                if (category.equals("Breakfast")) {
+
+                    switch (i) {
+                        case 0:
+                            food = "Pav Bhaji";
+                            fimage = R.drawable.ghewar;
+                            break;
+                        case 1:
+                            food = "XXX";
+                            fimage = R.drawable.marinedrive;
+                            break;
+                        case 2:
+                            food = "XXX";
+                            fimage = R.drawable.taj;
+                            break;
+                        case 3:
+                            food = "Masala Dosa";
+                            fimage = R.drawable.tajmahal;
+                            break;
+                    }
+                }
+                if (category.equals("Lunch")) {
+
+                    switch (i) {
+                        case 0:
+                            food = "Aaloo Sabzi, Boondi Rayta, Dal ";
+                            fimage = R.drawable.ghewar;
+                            break;
+                        case 1:
+                            food = "Mix Veg, Boondi Rayta, Lobiya Dal(Black Eyed Bean)";
+                            fimage = R.drawable.marinedrive;
+                            break;
+                        case 2:
+                            food = "XXX";
+                            fimage = R.drawable.taj;
+                            break;
+                        case 3:
+                            food = "YYY";
+                            fimage = R.drawable.tajmahal;
+                            break;
+                    }
+                }
+
+                if (category.equals("Snacks")) {
+
+                    switch (i) {
+                        case 0:
+                            food = "MESS OPEN(Paid Mess)";
+                            fimage = R.drawable.ghewar;
+                            break;
+                        case 1:
+                            food = "MESS OFF";
+                            fimage = R.drawable.marinedrive;
+                            break;
+                        case 2:
+                            food = "MESS OFF";
+                            fimage = R.drawable.taj;
+                            break;
+                        case 3:
+                            food = "MESS OFF";
+                            fimage = R.drawable.tajmahal;
+                            break;
+                    }
+                }
+
+                if (category.equals("Dinner")){
+                            switch (i) {
+                                case 0:
+                                    food = "(PAID MESS)Fried Rice, Egg Fried Rice, Masala Dosa, Aalo Parantha, Uttpam, Omlette";
+                                    fimage = R.drawable.ghewar;
+                                    break;
+                                case 1:
+                                    food = "MESS OFF";
+                                    fimage = R.drawable.marinedrive;
+                                    break;
+                                case 2:
+                                    food = "MESS OFF";
+                                    fimage = R.drawable.taj;
+                                    break;
+                                case 3:
+                                    food = "MESS OFF";
+                                    fimage = R.drawable.tajmahal;
+                                    break;
+                            }
+                }
+            }
+            if (weekday.equals("Saturday")) {
+                if (category.equals("Breakfast")) {
+
+                    switch (i) {
+                        case 0:
+                            food = "Puri-Sabzi";
+                            fimage = R.drawable.ghewar;
+                            break;
+                        case 1:
+                            food = "XXX";
+                            fimage = R.drawable.marinedrive;
+                            break;
+                        case 2:
+                            food = "XXX";
+                            fimage = R.drawable.taj;
+                            break;
+                        case 3:
+                            food = "Puri Sabzi";
+                            fimage = R.drawable.tajmahal;
+                            break;
+                    }
+                }
+                if (category.equals("Lunch")) {
+
+                    switch (i) {
+                        case 0:
+                            food = "XXX";
+                            fimage = R.drawable.ghewar;
+                            break;
+                        case 1:
+                            food = "Khichdi";
+                            fimage = R.drawable.marinedrive;
+                            break;
+                        case 2:
+                            food = "XXX";
+                            fimage = R.drawable.taj;
+                            break;
+                        case 3:
+                            food = "Khichdi";
+                            fimage = R.drawable.tajmahal;
+                            break;
+                    }
+                }
+                if (category.equals("Snacks")) {
+
+                    switch (i) {
+                        case 0:
+                            food = "XXX";
+                            fimage = R.drawable.ghewar;
+                            break;
+                        case 1:
+                            food = "XXX";
+                            fimage = R.drawable.marinedrive;
+                            break;
+                        case 2:
+                            food = "XXX";
+                            fimage = R.drawable.taj;
+                            break;
+                        case 3:
+                            food = "YYY";
+                            fimage = R.drawable.tajmahal;
+                            break;
+                    }
+                }
+                if (category.equals("Dinner")){
+                            switch (i) {
+                                case 0:
+                                    food = "Masala Dosa";
+                                    fimage = R.drawable.ghewar;
+                                    break;
+                                case 1:
+                                    food = "Upma, Sambhar Vada";
+                                    fimage = R.drawable.marinedrive;
+                                    break;
+                                case 2:
+                                    food = "XXX";
+                                    fimage = R.drawable.taj;
+                                    break;
+                                case 3:
+                                    food = "YYY";
+                                    fimage = R.drawable.tajmahal;
+                                    break;
+                            }
+                      }
+                }
+            if (weekday.equals("Sunday")) {
+                if (category.equals("Breakfast")) {
+
+                    switch (i) {
+                        case 0:
+                            food = "Aalo Parantha";
+                            fimage = R.drawable.ghewar;
+                            break;
+                        case 1:
+                            food = "XXX";
+                            fimage = R.drawable.marinedrive;
+                            break;
+                        case 2:
+                            food = "XXX";
+                            fimage = R.drawable.taj;
+                            break;
+                        case 3:
+                            food = "Aalo Parantha";
+                            fimage = R.drawable.tajmahal;
+                            break;
+                    }
+                }
+
+                if (category.equals("Lunch")) {
+
+                    switch (i) {
+                        case 0:
+                            food = "Shahi Paneer, Veg Rayta, Pulao, Lobiya Dal(XXX)";
+                            fimage = R.drawable.ghewar;
+                            break;
+                        case 1:
+                            food = "Shahi Paneer, Veg Rayta, Pulao, Lobiya Dal(XXX)";
+                            fimage = R.drawable.marinedrive;
+                            break;
+                        case 2:
+                            food = "XXX";
+                            fimage = R.drawable.taj;
+                            break;
+                        case 3:
+                            food = "Shahi Paneer, Veg Rayta, Pulao, Lobiya Dal(XXX)";
+                            fimage = R.drawable.tajmahal;
+                            break;
+                    }
+                }
+                if (category.equals("Snacks")) {
+
+                    switch (i) {
+                        case 0:
+                            food = "Masala Dosa";
+                            fimage = R.drawable.ghewar;
+                            break;
+                        case 1:
+                            food = "Upma, Sambhar Vada";
+                            fimage = R.drawable.marinedrive;
+                            break;
+                        case 2:
+                            food = "XXX";
+                            fimage = R.drawable.taj;
+                            break;
+                        case 3:
+                            food = "Bread Sandwich";
+                            fimage = R.drawable.tajmahal;
+                            break;
+                    }
+                }
+                if (category.equals("Dinner")) {
+                    switch (i) {
+                        case 0:
+                            food = "XXX";
+                            fimage = R.drawable.ghewar;
+                            break;
+                        case 1:
+                            food = "XXX";
+                            fimage = R.drawable.marinedrive;
+                            break;
+                        case 2:
+                            food = "XXX";
+                            fimage = R.drawable.taj;
+                            break;
+                        case 3:
+                            food = "YYY";
+                            fimage = R.drawable.tajmahal;
+                            break;
+                    }
+
+                    }
+            }
             // Set supplemental actions
             TextSupplementalAction t1 = new TextSupplementalAction(this, R.id.action1);
             t1.setOnActionClickListener(new BaseSupplementalAction.OnActionClickListener() {
@@ -349,7 +882,7 @@ public class Home extends DrawerActivity {
                 @Override
                 public void onClick(Card card, View view) {
                     Toast.makeText(Home.this, "WORKING! for t2", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(Home.this, Details.class);
+                    Intent intent = new Intent(Home.this, Choose.class);
                     Home.this.startActivity(intent);
 
                 }
